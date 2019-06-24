@@ -5585,7 +5585,6 @@ registerAnonymousEventHandler(
         	setMapZoom(35)
 					GUIframe.loadSettings()
 					GUIframe.activate("All")
-					cShopMenu()
 					styleLoad()--set scrollbar stylesheet
         	local mapw = 232
         	local maph = 255	
@@ -5594,6 +5593,7 @@ registerAnonymousEventHandler(
 					if (aard.map.enable) then aard:init_map() end
 					aard.init = true
 					aard.log:info("Scripts initialized")
+					cShopMenu()--if rooms are missing from map this can break loading, do it last.
         end)
       end
     end
@@ -7999,7 +7999,7 @@ end</script>
 				<Script isActive="yes" isFolder="no">
 					<name>onRoom</name>
 					<packageName></packageName>
-					<script>function onRoom()
+					<script>function onRoom()	
   if not aard.map.current_room then--value not initialized
     if gmcp.room.info then
       if gmcp.room.info.num then--gmcp room number available
@@ -8437,8 +8437,8 @@ else
 	send("con all",true)--out of combat
 end</script>
 				<command></command>
-				<keyCode>16777220</keyCode>
-				<keyModifier>0</keyModifier>
+				<keyCode>55</keyCode>
+				<keyModifier>536870912</keyModifier>
 			</Key>
 			<Key isActive="yes" isFolder="no">
 				<name>1 portal</name>
