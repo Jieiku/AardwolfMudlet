@@ -3,7 +3,13 @@ Installation
 
 open mudlet, connect to aardwolf.
 
-download this zip file and extract it someplace: https://github.com/xekon/AardwolfMudlet/archive/master.zip
+download this zip file and extract it to your mudlet profile directory: https://github.com/xekon/AardwolfMudlet/archive/master.zip
+
+on linux:
+    /home/kazuma/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml
+
+on windows:
+    C:\Users\kazuma\.config\mudlet\profiles\Aardwolf\aardwolf\aardwolf.xml
 
 From menu, choose Toolbox -> Module Manager -> Install -> select the aardwolf.xml file you extracted, have the sync checkbox selected.
 
