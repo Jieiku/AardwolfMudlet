@@ -3,7 +3,7 @@ Installation
 
 open mudlet, connect to aardwolf.
 
-download this zip file and extract it to your mudlet profile directory: https://github.com/xekon/AardwolfMudlet/archive/master.zip
+extract this zip to your mudlet profile directory: https://github.com/xekon/AardwolfMudlet/archive/master.zip
 
 on linux:
 
