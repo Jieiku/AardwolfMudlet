@@ -21,7 +21,7 @@ Now close and relaunch Mudlet Twice!
 
 in the mapper resize the rooms to size 10
 
-drag the GUI elements around to resize it the way you want, then type guisave
+drag the GUI elements around to resize it the way you want (RIGHT MOUSE BUTTON!), then type guisave
 
 
 Notes
