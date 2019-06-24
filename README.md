@@ -3,7 +3,7 @@ Installation
 
 open mudlet, connect to aardwolf.
 
-download the aardwolf.zip file and extract it someplace. https://github.com/xekon/AardwolfMudlet/archive/master.zip
+download this zip file and extract it someplace: https://github.com/xekon/AardwolfMudlet/archive/master.zip
 
 From menu, choose Toolbox -> Module Manager -> Install -> select the aardwolf.xml file you extracted, have the sync checkbox selected.
 
