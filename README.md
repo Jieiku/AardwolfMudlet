@@ -1,4 +1,4 @@
-![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/aardwolfmudlet.png)
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/aardwolfmudlet.png)
 
 Installation
 ===========
