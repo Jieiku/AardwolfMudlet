@@ -43,6 +43,10 @@ Features
 
 clickable links for quests/gquests (similar functionality to Search and Destroy, but interface needs its own window and a bit of streamlining.)
 
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/quest.png)
+
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/campaign.png)
+
 Automapper Window (the small ASCII map)
 
 Gmcp mapper code to track and build mapper database.
