@@ -57,6 +57,8 @@ Tabbed chat interface.
 
 parts of the interface can be dragged and dropped in different predefined areas. To drag and drop item or resize the frame you right click on the tab or the blue drag handles and drag the mouse.
 
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/move.gif)
+
 Currently script config is handled by typing "vc" or "vconfig" these values are saved PER Character, so if you enter aardwolf with a different character/alt it will automatically store these to a seperate config file based on your character's name.
 
 ![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/vc.png)
