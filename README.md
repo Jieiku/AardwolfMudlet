@@ -59,6 +59,8 @@ parts of the interface can be dragged and dropped in different predefined areas.
 
 Currently script config is handled by typing "vc" or "vconfig" these values are saved PER Character, so if you enter aardwolf with a different character/alt it will automatically store these to a seperate config file based on your character's name.
 
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/vc.png)
+
 Gquest/war sound notification when its within your level range.
 
 runto alias, this alias is used from recall and adds the ability to runto.
