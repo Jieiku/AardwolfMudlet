@@ -77,6 +77,8 @@ rfa room_name_keyword search the mapper within the current area for part of a ro
 
 typing "where" or "where mob/player" provides clickable links to get to that player or mob.
 
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/where.png)
+
 guisave - type to save the gui layout.
 
 campaign leveling - automatic noexp toggle, customizeable exp threshold
