@@ -53,6 +53,8 @@ Gmcp mapper code to track and build mapper database.
 
 Group Interface Window with damage meters. ("damage 0" is the only mode currently tested.)
 
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/epic.png)
+
 Tabbed chat interface.
 
 parts of the interface can be dragged and dropped in different predefined areas. To drag and drop item or resize the frame you right click on the tab or the blue drag handles and drag the mouse.
