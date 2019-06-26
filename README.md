@@ -94,6 +94,8 @@ when using the cardinal direction keys, the presence of a door is checked and is
 pup stat reporter, currently if the groupsize is greater than 5 then it does not fire, this was to prevent me from accidentally having it enabled in EPIC runs.
 
 Player notes, type "finger <player>" and you will see a clickable link to add a note about that player.
+    
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/notes.gif)
 
 potion count tracking(some bugs to work out, just haven't had time, such as two different types of potions, and count of last seen type is used.)
 
