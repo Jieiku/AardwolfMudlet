@@ -51,6 +51,8 @@ Automapper Window (the small ASCII map)
 
 Gmcp mapper code to track and build mapper database.
 
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/mapper.gif)
+
 Group Interface Window with damage meters. ("damage 0" is the only mode currently tested.)
 
 ![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/epic.png)
