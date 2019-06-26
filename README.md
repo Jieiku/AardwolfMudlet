@@ -97,8 +97,6 @@ pup stat reporter, currently if the groupsize is greater than 5 then it does not
 
 Player notes, type "finger <player>" and you will see a clickable link to add a note about that player.
     
-![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/notes.gif)
-
 potion count tracking(some bugs to work out, just haven't had time, such as two different types of potions, and count of last seen type is used.)
 
 consider all, color coordinated level difference shown.
