@@ -85,6 +85,8 @@ campaign leveling - automatic noexp toggle, customizeable exp threshold
 
 there is a flyout clanshop speedwalk menu in the topleft corner.
 
+![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/shops.png)
+
 chat channel/event sounds
 
 when using the cardinal direction keys, the presence of a door is checked and issued if exists.
