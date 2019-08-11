@@ -1,3 +1,5 @@
+AardwolfMudlet is an Aardwolf package for Mudlet client created specifically for Aardmud. Mudlet is A cross-platform, open source, and super fast MUD client with scripting in Lua.
+
 ![AardwolfMudlet](https://raw.githubusercontent.com/xekon/AardwolfMudlet/master/ss/aardwolfmudlet.png)
 
 Installation
@@ -155,7 +157,7 @@ In progress code
 
 INFO data tracker, track the various data messages on INFO channel. I completed some of this, the data for levels, deaths, pups are all tracked, you can view the data by typing "lua display(aard.adt)" I planned to create a window to display this data in a pretty way, the window was only going to show on mouseover or click of a button at the top, probably above the mapper. I also planned to track other things as well eventually, like gold/minute/area etc.
 
-an inventory management scrip with database backend (think dINV) but with clickable UI similar to the basic config I implemented. "vc" The idea was to have something similar to dINV but have as many things be clickable licks as possible, to make it simpler to use. For example, if you bid on an item on the auction, embed a clickable link in that output that automatically print a table of comparable equipment (dINV covet) What I dislike about dINV is that there is a lot to learn to use it efficiently, to the creators credit the helpfiles are excellent, but when possible I like scripts to be very accessible without even having read the help files. Most of the Triggers for this are finished in the folder labeled itemDB, also key F7 is an example of how to create a simple sqlite3 database. This is the project I was currently working on, I just don't have the time.
+an inventory management scrip with database backend (think dINV) but with clickable UI similar to the basic config I implemented. "vc" The idea was to have something similar to dINV but have as many things be clickable links as possible, to make it simpler to use. For example, if you bid on an item on the auction, embed a clickable link in that output that automatically print a table of comparable equipment (dINV covet) What I dislike about dINV is that there is a lot to learn to use it efficiently, to the creators credit the helpfiles are excellent, but when possible I like scripts to be very accessible without even having read the help files. Most of the Triggers for this are finished in the folder labeled itemDB, also key F7 is an example of how to create a simple sqlite3 database. This is the project I was currently working on, I just don't have the time.
 
 
 Planned extra features
