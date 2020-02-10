@@ -25,6 +25,8 @@ in the mapper resize the rooms to size 10
 
 drag the GUI elements around to resize it the way you want (RIGHT MOUSE BUTTON!), then type guisave
 
+you may also notice the command separator does not work as you may expect, by default it is configured as ;; you can change it to a single semicolon ; in the options, goto options > preferences > input line.
+
 
 Notes
 =====
