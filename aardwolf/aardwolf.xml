@@ -2893,7 +2893,7 @@ end</script>
   appendBuffer("Private")
   appendBuffer("All")
   appendBuffer("Group")
-  aard.audioAlert("Alert")
+  aard.audioAlert("Gquest")
 end</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
@@ -3041,7 +3041,7 @@ copy()
 appendBuffer("Private")
 appendBuffer("All")
 appendBuffer("Group")
-aard.audioAlert("Alert")</script>
+aard.audioAlert("Quest")</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -7577,8 +7577,13 @@ end
 					<script>local path = getMudletHomeDir()
 path = path:gsub("[\\/]","/")
 
+-- Derive spoken definitions from sound definitions
+GUIframe.speech = {}
+
 GUIframe.sounds = {
   Alert = [[/aardwolf/alert.wav]],
+  Quest = [[/aardwolf/alert.wav]],
+  Gquest = [[/aardwolf/alert.wav]],
   Clan = [[/aardwolf/clan.wav]],
   Friend = [[/aardwolf/friend.wav]],
   Group = [[/aardwolf/group.wav]],
@@ -7586,23 +7591,16 @@ GUIframe.sounds = {
   Spouse = [[/aardwolf/spouse.wav]],
   Tell = [[/aardwolf/tell.wav]],
 }
-GUIframe.sounds["Alert"] = path..GUIframe.sounds["Alert"]:gsub("[\\/]","/")
-GUIframe.sounds["Clan"] = path..GUIframe.sounds["Clan"]:gsub("[\\/]","/")
-GUIframe.sounds["Friend"] = path..GUIframe.sounds["Friend"]:gsub("[\\/]","/")
-GUIframe.sounds["Group"] = path..GUIframe.sounds["Group"]:gsub("[\\/]","/")
-GUIframe.sounds["Say"] = path..GUIframe.sounds["Say"]:gsub("[\\/]","/")
-GUIframe.sounds["Spouse"] = path..GUIframe.sounds["Spouse"]:gsub("[\\/]","/")
-GUIframe.sounds["Tell"] = path..GUIframe.sounds["Tell"]:gsub("[\\/]","/")
 
-GUIframe.speech = {
-  Alert = "Alert",
-  Clan = "Clan",
-  Friend = "Friend",
-  Group = "Group",
-  Say = "Say",
-  Spouse = "Spouse",
-  Tell = "Tell",
-}
+-- Update paths for sound files and define default spoken announcements
+for alertType, _ in pairs(GUIframe.sounds) do
+  GUIframe.sounds[alertType] = path .. GUIframe.sounds[alertType]:gsub("[\\/]","/")
+  GUIframe.speech[alertType] = alertType
+end
+
+-- Override speech announcements, if desired
+GUIframe.speech["Quest"] = "Quest ready"
+GUIframe.speech["Gquest"] = "Global quest starting"
 
 --refactor associative table for sounds, loop them
 if not (io.exists(GUIframe.sounds["Alert"]) and io.exists(GUIframe.sounds["Clan"])) then
