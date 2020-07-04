@@ -2457,7 +2457,6 @@ aard.timerDaily = aard.timerDaily - 3600--workaround bug: https://github.com/Mud
 --echo("\n epoch date, difference from now: ")
 --display(shms(getEpoch()-aard.timerDaily, true))
 
-
 aard.timerDaily = aard.timerDaily + (aard.config["tdiff"]*60*60) + 82800--82800 = 23 hours which is the time between blessings
 --echo("\n output date: ")--1555621135
 --display(aard.tdiff*60*60)
@@ -2838,8 +2837,8 @@ end</script>
 decho("All", "&lt;255,0,0&gt;PK!!")
 decho("Private", "&lt;255,0,0&gt;PK!!")
 decho("Group", "&lt;255,0,0&gt;PK!!")
-playSoundFile(GUIframe.sounds["Tell"])
-playSoundFile(GUIframe.sounds["Alert"])</script>
+aard.audioAlert("Tell")
+aard.audioAlert("Alert")</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -2867,7 +2866,7 @@ playSoundFile(GUIframe.sounds["Alert"])</script>
   appendBuffer("Private")
   appendBuffer("All")
   appendBuffer("Group")
-	playSoundFile(GUIframe.sounds["Alert"])
+  aard.audioAlert("Alert")
 end</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
@@ -2894,7 +2893,7 @@ end</script>
   appendBuffer("Private")
   appendBuffer("All")
   appendBuffer("Group")
-	playSoundFile(GUIframe.sounds["Alert"])
+  aard.audioAlert("Alert")
 end</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
@@ -3042,7 +3041,7 @@ copy()
 appendBuffer("Private")
 appendBuffer("All")
 appendBuffer("Group")
-playSoundFile(GUIframe.sounds["Alert"])</script>
+aard.audioAlert("Alert")</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -4041,12 +4040,13 @@ guiLoad()</script>
 --aard.config["cpexp"]=700,
 --aard.config["group"]=1,
 --aard.config["tdiff"]=-3,
+--aard.config["speak"]="false",
 
 --display(matches[2])
 --display(matches[3])
 
 if matches[2] and matches[3] then
-	if aard.config[matches[2]] then
+	if aard.config[matches[2]] ~= nil then
 		local arg = string.gsub(matches[3],"|",";")
 		--if matches[3] has space then surround with single quotes
 		aard.config[matches[2]] = arg
@@ -4110,6 +4110,10 @@ echoLink(aard.config["group"], "printCmdLine'vconfig group '", "Click to set the
 
 decho("  &lt;51,102,255&gt;- &lt;192,192,192&gt;Mud Time Difference: ") setFgColor(51,102,255)
 echoLink(aard.config["tdiff"], "printCmdLine'vconfig tdiff '", "Click to set the Time Difference from Mud Time.", true)
+echo("\n")
+
+decho("  &lt;51,102,255&gt;- &lt;192,192,192&gt;Speak alerts instead of sounds: ") setFgColor(51,102,255)
+echoLink(aard.config["speak"], "printCmdLine'vconfig speak '", "Click to override audio alerts with speech.", true)
 echo("\n")
 
 setFgColor(192,192,192)
@@ -4321,6 +4325,25 @@ function aard.log:error(msg)
   cecho("&lt;dark_slate_grey&gt;[&lt;white&gt;::&lt;firebrick&gt;(error):&lt;light_grey&gt; "..msg.." &lt;white&gt;::&lt;dark_slate_grey&gt;]\n")
 end
 
+function aard.audioAlert(event)
+  if aard.config["speak"] == "true" then
+    if GUIframe.speech[event] == nil then
+      aard.log:error("Undefined speech audio alert: " .. event)
+      return
+    end
+  
+    ttsSpeak(GUIframe.speech[event])
+    return
+  end
+  
+  if GUIframe.sounds[event] == nil then
+    aard.log:error("Undefined audio alert: " .. event)
+    return
+  end
+  
+  playSoundFile(GUIframe.sounds[event])
+end
+
 function round(n)
   return math.floor(n + 0.5)
 end</script>
@@ -4441,6 +4464,7 @@ aard.configDefault = {
 ["cpexp"]=700,
 ["group"]=1,
 ["tdiff"]=-3,
+["speak"]="false", -- Stringly typed because of user input in vconfig
 }
 
 --Automatically toggle noexp once your TNL is less than this amount on CP level +1
@@ -6806,7 +6830,7 @@ function aard.map:connectSpecialExits()
 		and not string.match(aard.command, "dual") --dual wielding after using aardwolf amulet portal is not a portal!
 		and not string.match(aard.command, "run") then--run/runto is not a portal command!
     aard.log:debug("Saw special exit command ("..aard.command.."), linking to prior room")
-		playSoundFile(GUIframe.sounds["Alert"])
+		aard.audioAlert("Alert")
 
     local special_exits = getSpecialExits(gmcp.room.info.num)
     if not table.contains(special_exits, aard.command) then
@@ -7570,6 +7594,16 @@ GUIframe.sounds["Say"] = path..GUIframe.sounds["Say"]:gsub("[\\/]","/")
 GUIframe.sounds["Spouse"] = path..GUIframe.sounds["Spouse"]:gsub("[\\/]","/")
 GUIframe.sounds["Tell"] = path..GUIframe.sounds["Tell"]:gsub("[\\/]","/")
 
+GUIframe.speech = {
+  Alert = "Alert",
+  Clan = "Clan",
+  Friend = "Friend",
+  Group = "Group",
+  Say = "Say",
+  Spouse = "Spouse",
+  Tell = "Tell",
+}
+
 --refactor associative table for sounds, loop them
 if not (io.exists(GUIframe.sounds["Alert"]) and io.exists(GUIframe.sounds["Clan"])) then
     aard.log:error("Unable to locate sound files, please check path and configuration.")
@@ -7585,7 +7619,7 @@ function chanpEcho(chan,msg)
 		GUIframe.configs.tabsToBlink["Private"] = true--set the tab to be blinked
 	end
 	if not string.find(msg,gmcp.char.base.name..": ") then
-		playSoundFile(GUIframe.sounds[chan])
+    aard.audioAlert(chan)
 	end
 end
 
