@@ -7671,7 +7671,7 @@ end
 	aard.tnl = gmcp.char.status.tnl
 
 	if aard.cpLevel then
-  	if aard.noexp == "" and tonumber(gmcp.char.status.level) &gt; aard.cpLevel and aard.config["cpexp"] &gt; tonumber(aard.tnl) and tonumber(gmcp.char.status.level) &lt;= aard.config["cplvl"] then
+  	if aard.noexp == "" and tonumber(gmcp.char.status.level) &gt; tonumber(aard.cpLevel) and tonumber(aard.config["cpexp"]) &gt; tonumber(aard.tnl) and tonumber(gmcp.char.status.level) &lt;= tonumber(aard.config["cplvl"]) then
       aard.noexp = " *NO EXP*"
       aard.qTimeNOexp()
   		send("noexp")
