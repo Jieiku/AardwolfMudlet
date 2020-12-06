@@ -125,8 +125,6 @@ The flyout menu that I use for clan shops does not always hide on mouseout, this
 
 Time to cooldown on Daily blessing will be off by one hour if your location is currently experiencing daylight savings: https://github.com/Mudlet/Mudlet/issues/2514
 
-Part of the GUI can be dragged and dropped in other regions or resized, currently resizing in the direction of the mapper must be done slowly or you get a non response issue: https://github.com/Mudlet/Mudlet/issues/2499
-
 
 Todo List
 =====
