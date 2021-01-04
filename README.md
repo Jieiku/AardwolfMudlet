@@ -119,10 +119,6 @@ F8 key is used to map area portal command that does not use the "enter" keyword 
 Bugs
 =====
 
-The flyout menu that I use for clan shops does not always hide on mouseout, this is a bug within geyser, the issue is tracked here: https://github.com/Mudlet/Mudlet/issues/2500 (this issue was mostly fixed, however there is long delay before it hides now)
-
-The flyout menu sub menus do not close properly when you move to a new parent menu item that does not have a submenu: https://github.com/Mudlet/Mudlet/issues/4438
-
 Time to cooldown on Daily blessing will be off by one hour if your location is currently experiencing daylight savings: https://github.com/Mudlet/Mudlet/issues/2514
 
 
