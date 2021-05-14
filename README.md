@@ -88,6 +88,7 @@ typing "where" or "where mob/player" provides clickable links to get to that pla
 guisave - type to save the gui layout.
 
 campaign leveling - automatic noexp toggle, customizeable exp threshold
+
 Note to disable this feature: vconfig cpexp -1
 
 there is a flyout clanshop speedwalk menu in the topleft corner.
