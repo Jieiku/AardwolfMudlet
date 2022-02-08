@@ -117,13 +117,6 @@ Shift+F4 key does same as F4 but it also prints a list of rooms with their Vnums
 
 F8 key is used to map area portal command that does not use the "enter" keyword for example "enter red", for example if the portal command was instead "sit carriage"
 
-
-Bugs
-=====
-
-Time to cooldown on Daily blessing will be off by one hour if your location is currently experiencing daylight savings: https://github.com/Mudlet/Mudlet/issues/2514
-
-
 Todo List
 =====
 
